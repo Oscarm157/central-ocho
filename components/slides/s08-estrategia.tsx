@@ -10,9 +10,11 @@ import { quotes } from "@/lib/data";
 const phases = [
   {
     fase: "Fase 1",
-    price: 4.95,
-    label: "Preventa (inicio)",
-    status: "Captura early adopters",
+    priceDisplay: "$4.3M",
+    price: 4.3,
+    useCounter: true,
+    label: "Precio exclusivo para inversionistas",
+    status: "Acceso preferencial antes de obra",
     bg: "bg-background border border-card-border",
     text: "text-foreground",
     priceColor: "text-primary",
@@ -20,9 +22,11 @@ const phases = [
   },
   {
     fase: "Fase 2",
+    priceDisplay: "$5.2M",
     price: 5.2,
-    label: "Venta en obra",
-    status: "Incremento progresivo",
+    useCounter: true,
+    label: "Preventa durante construcción",
+    status: "Precio manejable en etapa de obra",
     bg: "bg-primary/10 border border-primary/20",
     text: "text-foreground",
     priceColor: "text-primary",
@@ -30,9 +34,11 @@ const phases = [
   },
   {
     fase: "Fase 3",
-    price: 5.6,
-    label: "Entrega terminada",
-    status: "Valor real del mercado",
+    priceDisplay: "$5.8 – $6M",
+    price: 5.9,
+    useCounter: false,
+    label: "Precio de mercado al término de obra",
+    status: "Valor real una vez entregado",
     bg: "bg-primary border border-primary",
     text: "text-white",
     priceColor: "text-white",
@@ -60,7 +66,10 @@ export function S08Estrategia() {
               >
                 <p className={`text-lg sm:text-xl font-bold uppercase tracking-wider mb-2 ${p.faseColor}`}>{p.fase}</p>
                 <div className={`font-mono text-3xl sm:text-4xl font-medium mb-1 ${p.priceColor}`}>
-                  <AnimatedCounter target={p.price} prefix="$" suffix="M" decimals={2} duration={1200} />
+                  {p.useCounter
+                    ? <AnimatedCounter target={p.price} prefix="$" suffix="M" decimals={1} duration={1200} />
+                    : p.priceDisplay
+                  }
                 </div>
                 <p className={`text-sm font-medium mb-2 ${p.text}`}>{p.label}</p>
                 <p className={`text-xs ${p.text === "text-white" ? "text-white/60" : "text-muted"}`}>{p.status}</p>
