@@ -13,27 +13,30 @@ const phases = [
     price: 4.95,
     label: "Preventa (inicio)",
     status: "Captura early adopters",
-    bg: "bg-card",
+    bg: "bg-background border border-card-border",
     text: "text-foreground",
     priceColor: "text-primary",
+    faseColor: "text-foreground/50",
   },
   {
     fase: "Fase 2",
     price: 5.2,
     label: "Venta en obra",
     status: "Incremento progresivo",
-    bg: "bg-sand",
+    bg: "bg-primary/10 border border-primary/20",
     text: "text-foreground",
     priceColor: "text-primary",
+    faseColor: "text-primary/70",
   },
   {
     fase: "Fase 3",
     price: 5.6,
     label: "Entrega terminada",
     status: "Valor real del mercado",
-    bg: "bg-accent",
-    text: "text-foreground",
-    priceColor: "text-primary",
+    bg: "bg-primary border border-primary",
+    text: "text-white",
+    priceColor: "text-white",
+    faseColor: "text-white/70",
   },
 ];
 
@@ -55,12 +58,12 @@ export function S08Estrategia() {
                 className={`${p.bg} ${p.text} rounded-xl p-5 sm:p-6 text-center w-full flex flex-col justify-between`}
                 style={{ opacity: 0, animation: `staggerChild 0.5s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.18}s forwards` }}
               >
-                <p className="text-xs uppercase tracking-wider mb-2 text-muted">{p.fase}</p>
+                <p className={`text-lg sm:text-xl font-bold uppercase tracking-wider mb-2 ${p.faseColor}`}>{p.fase}</p>
                 <div className={`font-mono text-3xl sm:text-4xl font-medium mb-1 ${p.priceColor}`}>
                   <AnimatedCounter target={p.price} prefix="$" suffix="M" decimals={2} duration={1200} />
                 </div>
-                <p className="text-sm font-medium mb-2">{p.label}</p>
-                <p className="text-xs text-muted">{p.status}</p>
+                <p className={`text-sm font-medium mb-2 ${p.text}`}>{p.label}</p>
+                <p className={`text-xs ${p.text === "text-white" ? "text-white/60" : "text-muted"}`}>{p.status}</p>
               </div>
 
               {i < phases.length - 1 && (
