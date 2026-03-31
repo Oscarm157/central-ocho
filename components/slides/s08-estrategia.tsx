@@ -3,70 +3,116 @@
 import { Slide } from "@/components/slide";
 import { SectionHeader } from "@/components/ui/section-header";
 import { CopperIcon } from "@/components/ui/copper-icon";
+import { QuoteBlock } from "@/components/ui/quote-block";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { quotes } from "@/lib/data";
 
 const phases = [
-  { fase: "Fase 1", price: 4.95, label: "Preventa (inicio)", status: "Captura early adopters", bg: "bg-card", text: "text-foreground" },
-  { fase: "Fase 2", price: 5.2, label: "Venta en obra", status: "Incremento progresivo", bg: "bg-sand", text: "text-foreground" },
-  { fase: "Fase 3", price: 5.6, label: "Entrega terminada", status: "Valor real del mercado", bg: "bg-charcoal", text: "text-white" },
+  {
+    fase: "Fase 1",
+    price: 4.95,
+    label: "Preventa (inicio)",
+    status: "Captura early adopters",
+    bg: "bg-card",
+    text: "text-foreground",
+    priceColor: "text-primary",
+  },
+  {
+    fase: "Fase 2",
+    price: 5.2,
+    label: "Venta en obra",
+    status: "Incremento progresivo",
+    bg: "bg-sand",
+    text: "text-foreground",
+    priceColor: "text-primary",
+  },
+  {
+    fase: "Fase 3",
+    price: 5.6,
+    label: "Entrega terminada",
+    status: "Valor real del mercado",
+    bg: "bg-charcoal",
+    text: "text-white",
+    priceColor: "text-primary-light",
+  },
 ];
 
 export function S08Estrategia() {
   return (
     <Slide>
       <div className="stagger-in">
-        <SectionHeader number="08" title="ESTRATEGIA COMERCIAL" subtitle="Escalonamiento inteligente de precio" />
+        <SectionHeader
+          number="08"
+          title="ESTRATEGIA COMERCIAL"
+          subtitle="Escalonamiento inteligente de precio"
+        />
 
-        {/* 3 escalation cards */}
-        <div className="flex items-stretch justify-center gap-2 sm:gap-4 mb-6">
+        {/* 3 escalation cards with arrows */}
+        <div className="flex flex-col sm:flex-row items-stretch justify-center gap-2 sm:gap-0 mb-6">
           {phases.map((p, i) => (
-            <div key={p.fase} className="flex items-center">
-              {/* Card */}
-              <div className={`${p.bg} rounded-xl p-4 sm:p-6 text-center flex-1 min-w-[100px] sm:min-w-[140px]`}>
-                <p className={`text-xs uppercase tracking-wider ${p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"} mb-2`}>
+            <div key={p.fase} className="flex items-center sm:flex-1">
+              <div
+                className={`${p.bg} ${p.text} rounded-xl p-5 sm:p-6 text-center w-full flex flex-col justify-between`}
+              >
+                <p
+                  className={`text-xs uppercase tracking-wider mb-2 ${
+                    p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"
+                  }`}
+                >
                   {p.fase}
                 </p>
-                <div className={`font-mono text-2xl sm:text-3xl md:text-4xl font-medium mb-1 ${p.bg === "bg-charcoal" ? "text-primary-light" : "text-primary"}`}>
-                  <AnimatedCounter target={p.price} prefix="$" suffix="M" decimals={2} duration={1200} />
+                <div
+                  className={`font-mono text-3xl sm:text-4xl font-medium mb-1 ${p.priceColor}`}
+                >
+                  <AnimatedCounter
+                    target={p.price}
+                    prefix="$"
+                    suffix="M"
+                    decimals={2}
+                    duration={1200}
+                  />
                 </div>
-                <p className={`text-sm font-medium ${p.text} mb-2`}>{p.label}</p>
-                <p className={`text-xs ${p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"}`}>{p.status}</p>
+                <p className="text-sm font-medium mb-2">{p.label}</p>
+                <p
+                  className={`text-xs ${
+                    p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"
+                  }`}
+                >
+                  {p.status}
+                </p>
               </div>
 
-              {/* Arrow */}
+              {/* Arrow between cards */}
               {i < phases.length - 1 && (
-                <span className="text-primary/40 text-xl sm:text-2xl font-light mx-1 sm:mx-2 shrink-0">&rarr;</span>
+                <span className="text-primary text-2xl sm:text-3xl font-light mx-2 sm:mx-3 shrink-0 hidden sm:block">
+                  &rarr;
+                </span>
               )}
             </div>
           ))}
         </div>
 
-        {/* Highlight banner */}
+        {/* Dark highlight banner */}
         <div className="bg-charcoal rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
-            <CopperIcon name="trending" size={24} className="text-primary-light shrink-0" />
+            <CopperIcon name="trending" size={28} className="text-primary-light shrink-0" />
             <div>
-              <p className="text-white/50 text-xs">Plusvalía capturada por unidad</p>
+              <p className="text-white/50 text-xs mb-0.5">Plusvalía capturada por unidad</p>
               <span className="text-primary-light font-mono text-2xl sm:text-3xl font-medium">
                 <AnimatedCounter target={650000} prefix="$" suffix="" duration={1500} />
-                <span className="text-lg"> MXN</span>
+                <span className="text-lg text-white/60 ml-1">MXN</span>
               </span>
             </div>
           </div>
-          <div className="sm:text-right">
-            <p className="text-white/50 text-xs">De preventa a entrega</p>
-            <span className="text-gradient font-mono text-xl sm:text-2xl font-medium">13.1% incremento</span>
+          <div className="sm:text-right sm:border-l sm:border-white/10 sm:pl-5">
+            <p className="text-white/50 text-xs mb-0.5">De preventa a entrega</p>
+            <span className="text-gradient font-mono text-xl sm:text-2xl font-medium">
+              13.1% incremento
+            </span>
           </div>
         </div>
 
-        {/* Quote */}
-        <div className="text-center">
-          <div className="w-10 h-[2px] bg-primary mx-auto mb-4" />
-          <p className="font-display text-base sm:text-lg text-muted italic max-w-2xl mx-auto">
-            &ldquo;{quotes.s08}&rdquo;
-          </p>
-        </div>
+        <QuoteBlock text={quotes.s08} />
       </div>
     </Slide>
   );

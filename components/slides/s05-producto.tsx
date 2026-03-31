@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Slide } from "@/components/slide";
+import { QuoteBlock } from "@/components/ui/quote-block";
 import { product, quotes } from "@/lib/data";
 
-const stats = [
-  { label: "Superficie habitable", value: "130 m²" },
-  { label: "Garage", value: "57 m²" },
-  { label: "Roof privado", value: "50 m²" },
-  { label: "Niveles", value: "3 + roof" },
+const statBars = [
+  { label: "Superficie habitable", value: `${product.surfaceHabitable} m²` },
+  { label: "Garage", value: `${product.garage} m²` },
+  { label: "Roof privado", value: `${product.roof} m²` },
+  { label: "Niveles", value: product.levels },
 ];
 
 export function S05Producto() {
@@ -14,10 +15,10 @@ export function S05Producto() {
     <Slide>
       <div className="stagger-in">
         {/* Header */}
-        <div className="mb-6">
-          <span className="font-mono text-sm text-foreground/20 block mb-3">05</span>
-          <div className="w-[60px] h-[2px] bg-primary mb-4" />
-          <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-primary-light font-medium mb-2">
+        <div className="mb-6 sm:mb-8">
+          <span className="font-mono text-sm text-foreground/20 block mb-2">05</span>
+          <div className="w-[60px] h-[2px] bg-primary mb-3" />
+          <p className="text-xs uppercase tracking-[0.25em] text-primary-light font-medium mb-1">
             El Producto
           </p>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground">
@@ -25,23 +26,29 @@ export function S05Producto() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 mb-6">
-          {/* Left: Stats bars */}
-          <div className="lg:col-span-2 space-y-3">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-charcoal rounded-lg px-5 py-3.5 flex items-center justify-between">
-                <span className="text-white/70 text-sm">{s.label}</span>
-                <span className="text-primary-light font-mono text-base sm:text-lg font-medium">{s.value}</span>
+        {/* Two-column layout: 40% stats / 60% image */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 mb-8">
+          {/* Left column — stat bars */}
+          <div className="lg:col-span-2 flex flex-col justify-center space-y-3">
+            {statBars.map((bar) => (
+              <div
+                key={bar.label}
+                className="flex items-center justify-between bg-charcoal rounded-lg px-5 py-3.5"
+              >
+                <span className="text-white/70 text-sm font-sans">{bar.label}</span>
+                <span className="font-mono text-primary-light text-base sm:text-lg font-medium">
+                  {bar.value}
+                </span>
               </div>
             ))}
           </div>
 
-          {/* Right: Render image */}
-          <div className="lg:col-span-3 relative rounded-xl overflow-hidden bg-card">
-            <div className="relative aspect-[4/3]">
+          {/* Right column — render image */}
+          <div className="lg:col-span-3">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-card">
               <Image
                 src="/images/planta-social.png"
-                alt="Área social — Central Ocho"
+                alt="Área social — render interior"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -51,25 +58,20 @@ export function S05Producto() {
           </div>
         </div>
 
-        {/* Distribution compact */}
+        {/* Distribution section */}
         <div className="mb-6">
-          <h3 className="font-semibold text-foreground text-sm mb-3 uppercase tracking-wider">Distribución inteligente</h3>
-          <div className="space-y-1.5 text-sm">
+          <h4 className="font-display text-lg text-foreground mb-3">Distribución inteligente</h4>
+          <div className="space-y-1.5">
             {product.distribution.map((d) => (
-              <p key={d.level} className="text-muted">
-                <span className="text-foreground font-medium">{d.level}:</span> {d.description}
+              <p key={d.level} className="text-sm sm:text-base text-muted">
+                <span className="font-semibold text-foreground">{d.level}:</span>{" "}
+                {d.description}
               </p>
             ))}
           </div>
         </div>
 
-        {/* Quote */}
-        <div className="text-center">
-          <div className="w-10 h-[2px] bg-primary mx-auto mb-4" />
-          <p className="font-display text-base sm:text-lg text-muted italic max-w-2xl mx-auto">
-            &ldquo;{quotes.s05}&rdquo;
-          </p>
-        </div>
+        <QuoteBlock text={quotes.s05} />
       </div>
     </Slide>
   );
