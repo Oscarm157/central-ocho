@@ -11,7 +11,6 @@ import { S07Diferenciadores } from "@/components/slides/s07-diferenciadores";
 import { S08Estrategia } from "@/components/slides/s08-estrategia";
 import { S09Proyeccion } from "@/components/slides/s09-proyeccion";
 import { S11Retorno } from "@/components/slides/s11-retorno";
-import { S13Cierre } from "@/components/slides/s13-cierre";
 
 export default function Home() {
   return (
@@ -26,7 +25,6 @@ export default function Home() {
       <S08Estrategia />
       <S09Proyeccion />
       <S11Retorno />
-      <S13Cierre />
     </SlidesDeck>
   );
 }
