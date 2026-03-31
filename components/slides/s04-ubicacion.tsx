@@ -76,12 +76,12 @@ export function S04Ubicacion() {
             </div>
 
             {/* Google Maps embed */}
-            <div className="rounded-xl overflow-hidden border border-card-border h-[160px]">
+            <div className="rounded-xl overflow-hidden border border-card-border h-[280px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3364.2820914329377!2d-116.99131202434798!3d32.518612073772786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMxJzA3LjAiTiAxMTbCsDU5JzE5LjUiVw!5e0!3m2!1ses-419!2smx!4v1774980142193!5m2!1ses-419!2smx"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d900!2d-116.99131202434798!3d32.518612073772786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMxJzA3LjAiTiAxMTbCsDU5JzE5LjUiVw!5e0!3m2!1ses-419!2smx!4v1774980142193!5m2!1ses-419!2smx"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "grayscale(100%) sepia(30%) saturate(60%)" }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
