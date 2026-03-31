@@ -76,11 +76,11 @@ export const contact = {
 export const quotes = {
   s02: "No es un desarrollo masivo. Es un producto preciso para un mercado que ya existe.",
   s03: "Producto correcto. Zona correcta. Momento correcto.",
-  s04: "La ubicación resuelve la salida del proyecto antes de que empiece la obra.",
+  s04: "Buena Vista lleva años siendo zona de demanda real. La ubicación ya tiene mercado.",
   s05: "Un producto que supera el estándar de mercado en su rango de precio.",
-  s08: "Se captura plusvalía durante el desarrollo. El que entra primero, paga menos.",
-  s09: "Proyecto de volumen controlado con alta liquidez por unidad.",
+  s08: "El precio sube con cada fase. Quien entra primero compra más barato el mismo producto, obteniendo más por su inversión.",
+  s09: "El estándar de un departamento chico en la zona ronda los $5.2M. A un precio similar, los townhouses se prevén de colocación rápida — son una opción mejor y más grande.",
   s10: "El modelo reduce exposición y acelera retorno.",
-  s11: "Retorno competitivo respaldado por un activo inmobiliario real.",
+  s11: "Es un proyecto corto con retorno claro. No hay que esperar años para ver resultados.",
   s12: "El balance ideal entre rendimiento atractivo y riesgo controlado.",
 };
