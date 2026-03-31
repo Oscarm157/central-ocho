@@ -14,7 +14,8 @@ const allImages = [
   { src: "/images/hero-fachada.png", alt: "Fachada nocturna", label: "Fachada · Vista frontal · Atardecer" },
 ];
 
-const plants = allImages.slice(1);
+const plants = allImages.slice(1, 5);
+const nocturna = allImages[5];
 
 export function S06Galeria() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -60,7 +61,7 @@ export function S06Galeria() {
         </div>
 
         {/* 2x2 grid */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
           {plants.map((img, i) => (
             <div
               key={img.src}
@@ -84,6 +85,31 @@ export function S06Galeria() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Fachada nocturna — full width al final */}
+        <div
+          className="relative rounded-xl overflow-hidden group cursor-zoom-in"
+          onClick={() => setLightboxIndex(5)}
+        >
+          <div className="relative aspect-[21/9]">
+            <Image
+              src={nocturna.src}
+              alt={nocturna.alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              sizes="100vw"
+              quality={85}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-5 py-3 flex items-end justify-between">
+            <p className="text-white text-sm sm:text-base font-medium drop-shadow-lg">{nocturna.label}</p>
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm rounded-lg px-2.5 py-1.5 flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-white" style={{ fontSize: 14 }}>zoom_in</span>
+              <span className="text-white text-xs">Ampliar</span>
+            </div>
+          </div>
         </div>
       </div>
 
