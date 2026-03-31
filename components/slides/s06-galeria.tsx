@@ -6,11 +6,12 @@ import { Slide } from "@/components/slide";
 import { ImageLightbox } from "@/components/ui/image-lightbox";
 
 const allImages = [
-  { src: "/images/hero-fachada.png", alt: "Fachada Central Ocho", label: "Fachada · Vista frontal · Atardecer" },
+  { src: "/images/fachada-dia.png", alt: "Fachada Central Ocho", label: "Fachada · Vista frontal · Día" },
   { src: "/images/planta-garage.png", alt: "Planta garage", label: "Planta Baja · Garage" },
   { src: "/images/planta-social.png", alt: "Área social", label: "Nivel 1 · Sala y Comedor" },
   { src: "/images/planta-recamaras.png", alt: "Recámaras", label: "Nivel 2 · Recámaras" },
   { src: "/images/planta-rooftop.png", alt: "Rooftop", label: "Roof · Terraza privada" },
+  { src: "/images/hero-fachada.png", alt: "Fachada nocturna", label: "Fachada · Vista frontal · Atardecer" },
 ];
 
 const plants = allImages.slice(1);
@@ -37,7 +38,7 @@ export function S06Galeria() {
         >
           <div className="relative aspect-[21/9]">
             <Image
-              src="/images/hero-fachada.png"
+              src="/images/fachada-dia.png"
               alt="Fachada — Central Ocho"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -49,7 +50,7 @@ export function S06Galeria() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-5 py-3 flex items-end justify-between">
             <p className="text-white text-sm sm:text-base font-medium drop-shadow-lg">
-              Fachada · Vista frontal · Atardecer
+              Fachada · Vista frontal · Día
             </p>
             <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm rounded-lg px-2.5 py-1.5 flex items-center gap-1.5">
               <span className="material-symbols-outlined text-white" style={{ fontSize: 14 }}>zoom_in</span>
