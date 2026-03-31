@@ -25,7 +25,7 @@ export default function Home() {
       <S08Estrategia />
       <S09Proyeccion />
       <S11Retorno />
-      <S01Hero />
+      <S01Hero variant="contraportada" />
     </SlidesDeck>
   );
 }
