@@ -26,8 +26,8 @@ export const pricing = {
     { fase: "En obra", precio: 5.20, label: "$5.20M", status: "Incremento progresivo" },
     { fase: "Entrega", precio: 5.60, label: "$5.60M", status: "Valor real del mercado" },
   ],
-  averagePrice: 5.2,
-  totalRevenue: 41.6,
+  averagePrice: 5.5,
+  totalRevenue: 44,
   appreciationPerUnit: 650000,
   appreciationPercent: 13.1,
 };
