@@ -148,6 +148,9 @@ body::after {
 .draw-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 1.5s ease-out 0.5s forwards; }
 @keyframes drawLine { to { stroke-dashoffset: 0; } }
 
+/* CTA pulse */
+@keyframes pulse-cta { 0%, 100% { box-shadow: 0 0 0 0 rgba(139,105,20,0.4); } 50% { box-shadow: 0 0 0 10px rgba(139,105,20,0); } }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .slide-enter, .stagger-in > *, .animate-number, .bar-grow, .progress-animate, .hero-fade-in, .hero-fade-in-delayed, .hero-fade-in-delayed-2, .hero-fade-in-delayed-3 {

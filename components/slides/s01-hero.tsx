@@ -36,12 +36,14 @@ export function S01Hero() {
           {project.location}
         </p>
 
-        {/* Next indicator */}
-        <div className="mt-10 flex flex-col items-center gap-1 hero-fade-in-delayed-3">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">Siguiente</span>
-          <span className="material-symbols-outlined text-white/40 animate-bounce-down" style={{ fontSize: 20 }}>
-            chevron_right
-          </span>
+        {/* CTA indicator */}
+        <div className="mt-10 hero-fade-in-delayed-3">
+          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all cursor-default">
+            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/70 font-medium">Ver propuesta</span>
+            <span className="material-symbols-outlined text-[#A67C00] animate-bounce-down" style={{ fontSize: 18 }}>
+              arrow_forward
+            </span>
+          </div>
         </div>
       </div>
     </div>

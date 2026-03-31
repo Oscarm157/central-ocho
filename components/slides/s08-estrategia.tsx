@@ -47,44 +47,27 @@ export function S08Estrategia() {
           subtitle="Escalonamiento inteligente de precio"
         />
 
-        {/* 3 escalation cards with arrows */}
+        {/* 3 phase cards — staggered */}
         <div className="flex flex-col sm:flex-row items-stretch justify-center gap-2 sm:gap-0 mb-6">
           {phases.map((p, i) => (
             <div key={p.fase} className="flex items-center sm:flex-1">
               <div
                 className={`${p.bg} ${p.text} rounded-xl p-5 sm:p-6 text-center w-full flex flex-col justify-between`}
+                style={{ opacity: 0, animation: `staggerChild 0.5s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.18}s forwards` }}
               >
-                <p
-                  className={`text-xs uppercase tracking-wider mb-2 ${
-                    "text-muted"
-                  }`}
-                >
-                  {p.fase}
-                </p>
-                <div
-                  className={`font-mono text-3xl sm:text-4xl font-medium mb-1 ${p.priceColor}`}
-                >
-                  <AnimatedCounter
-                    target={p.price}
-                    prefix="$"
-                    suffix="M"
-                    decimals={2}
-                    duration={1200}
-                  />
+                <p className="text-xs uppercase tracking-wider mb-2 text-muted">{p.fase}</p>
+                <div className={`font-mono text-3xl sm:text-4xl font-medium mb-1 ${p.priceColor}`}>
+                  <AnimatedCounter target={p.price} prefix="$" suffix="M" decimals={2} duration={1200} />
                 </div>
                 <p className="text-sm font-medium mb-2">{p.label}</p>
-                <p
-                  className={`text-xs ${
-                    "text-muted"
-                  }`}
-                >
-                  {p.status}
-                </p>
+                <p className="text-xs text-muted">{p.status}</p>
               </div>
 
-              {/* Arrow between cards */}
               {i < phases.length - 1 && (
-                <span className="text-primary text-2xl sm:text-3xl font-light mx-2 sm:mx-3 shrink-0 hidden sm:block">
+                <span
+                  className="text-primary text-2xl sm:text-3xl font-light mx-2 sm:mx-3 shrink-0 hidden sm:block"
+                  style={{ opacity: 0, animation: `staggerChild 0.5s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.18 + 0.09}s forwards` }}
+                >
                   &rarr;
                 </span>
               )}
@@ -92,7 +75,7 @@ export function S08Estrategia() {
           ))}
         </div>
 
-        {/* Dark highlight banner */}
+        {/* Highlight banner */}
         <div className="bg-card rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
             <CopperIcon name="trending" size={28} className="text-primary-light shrink-0" />

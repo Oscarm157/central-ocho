@@ -40,35 +40,29 @@ export function S07Diferenciadores() {
           </h2>
         </div>
 
-        {/* 2x2 grid of cards */}
+        {/* 2x2 grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-6">
           {items.map((d) => (
             <div
               key={d.title}
-              className="bg-background/70 border border-card-border rounded-xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+              className="bg-background/70 border border-card-border rounded-xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
             >
               <CopperIcon name={d.icon} size={26} className="mb-3" />
-              <h3 className="text-foreground font-bold text-base sm:text-lg mb-1.5">
-                {d.title}
-              </h3>
+              <h3 className="text-foreground font-bold text-base sm:text-lg mb-1.5">{d.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{d.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Bottom summary bar */}
-        <div className="bg-background/70 border border-card-border rounded-xl p-4 sm:p-5 flex items-center justify-between">
-          <div>
-            <span className="text-muted text-xs block mb-0.5">
-              Velocidad de venta esperada
-            </span>
-            <span className="text-foreground font-semibold text-sm">Alta absorción</span>
-          </div>
-          <div className="text-right">
-            <span className="text-muted text-xs block mb-0.5">
-              Diferenciación competitiva
-            </span>
-            <span className="text-gradient font-semibold text-sm">4 pilares sólidos</span>
+        {/* Bottom bar — 4 pillars as icons */}
+        <div className="bg-background/70 border border-card-border rounded-xl px-5 py-4">
+          <div className="grid grid-cols-4 divide-x divide-card-border">
+            {items.map((d) => (
+              <div key={d.title} className="flex flex-col items-center gap-2 px-3 text-center">
+                <CopperIcon name={d.icon} size={20} />
+                <span className="text-muted text-xs leading-tight">{d.title}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
