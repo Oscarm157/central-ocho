@@ -56,19 +56,19 @@ export function S04Ubicacion() {
 
           {/* Right side: Proximity table + Map */}
           <div className="space-y-4">
-            <div className="bg-charcoal rounded-xl overflow-hidden">
-              <div className="px-5 sm:px-6 py-4 border-b border-white/10">
-                <h3 className="text-white font-semibold text-base sm:text-lg">Zona de Influencia</h3>
+            <div className="bg-card rounded-xl overflow-hidden">
+              <div className="px-5 sm:px-6 py-4 border-b border-card-border">
+                <h3 className="text-foreground font-semibold text-base sm:text-lg">Zona de Influencia</h3>
               </div>
               <div>
                 {proximity.map((p, i) => (
                   <div
                     key={p.place}
                     className={`flex items-center justify-between px-5 sm:px-6 py-3 ${
-                      i % 2 === 1 ? "bg-white/5" : ""
+                      i % 2 === 1 ? "bg-foreground/5" : ""
                     }`}
                   >
-                    <span className="text-white/70 text-sm">{p.place}</span>
+                    <span className="text-muted text-sm">{p.place}</span>
                     <span className="text-primary-light font-mono text-sm font-medium">{p.time}</span>
                   </div>
                 ))}

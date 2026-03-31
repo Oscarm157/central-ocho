@@ -31,9 +31,9 @@ const phases = [
     price: 5.6,
     label: "Entrega terminada",
     status: "Valor real del mercado",
-    bg: "bg-charcoal",
-    text: "text-white",
-    priceColor: "text-primary-light",
+    bg: "bg-accent",
+    text: "text-foreground",
+    priceColor: "text-primary",
   },
 ];
 
@@ -56,7 +56,7 @@ export function S08Estrategia() {
               >
                 <p
                   className={`text-xs uppercase tracking-wider mb-2 ${
-                    p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"
+                    "text-muted"
                   }`}
                 >
                   {p.fase}
@@ -75,7 +75,7 @@ export function S08Estrategia() {
                 <p className="text-sm font-medium mb-2">{p.label}</p>
                 <p
                   className={`text-xs ${
-                    p.bg === "bg-charcoal" ? "text-white/40" : "text-muted"
+                    "text-muted"
                   }`}
                 >
                   {p.status}
@@ -93,19 +93,19 @@ export function S08Estrategia() {
         </div>
 
         {/* Dark highlight banner */}
-        <div className="bg-charcoal rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div className="bg-card rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
             <CopperIcon name="trending" size={28} className="text-primary-light shrink-0" />
             <div>
-              <p className="text-white/50 text-xs mb-0.5">Plusvalía capturada por unidad</p>
+              <p className="text-muted/70 text-xs mb-0.5">Plusvalía capturada por unidad</p>
               <span className="text-primary-light font-mono text-2xl sm:text-3xl font-medium">
                 <AnimatedCounter target={650000} prefix="$" suffix="" duration={1500} />
-                <span className="text-lg text-white/60 ml-1">MXN</span>
+                <span className="text-lg text-muted ml-1">MXN</span>
               </span>
             </div>
           </div>
-          <div className="sm:text-right sm:border-l sm:border-white/10 sm:pl-5">
-            <p className="text-white/50 text-xs mb-0.5">De preventa a entrega</p>
+          <div className="sm:text-right sm:border-l sm:border-card-border sm:pl-5">
+            <p className="text-muted/70 text-xs mb-0.5">De preventa a entrega</p>
             <span className="text-gradient font-mono text-xl sm:text-2xl font-medium">
               13.1% incremento
             </span>

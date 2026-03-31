@@ -33,9 +33,9 @@ export function S05Producto() {
             {statBars.map((bar) => (
               <div
                 key={bar.label}
-                className="flex items-center justify-between bg-charcoal rounded-lg px-5 py-3.5"
+                className="flex items-center justify-between bg-card rounded-lg px-5 py-3.5"
               >
-                <span className="text-white/70 text-sm font-sans">{bar.label}</span>
+                <span className="text-muted text-sm font-sans">{bar.label}</span>
                 <span className="font-mono text-primary-light text-base sm:text-lg font-medium">
                   {bar.value}
                 </span>

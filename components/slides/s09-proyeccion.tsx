@@ -36,8 +36,8 @@ export function S09Proyeccion() {
         </div>
 
         {/* Quote in dark banner */}
-        <div className="bg-charcoal rounded-xl py-4 px-6 text-center w-full max-w-2xl">
-          <p className="text-white/70 text-sm sm:text-base italic">&ldquo;{quotes.s09}&rdquo;</p>
+        <div className="bg-card rounded-xl py-4 px-6 text-center w-full max-w-2xl">
+          <p className="text-muted text-sm sm:text-base italic">&ldquo;{quotes.s09}&rdquo;</p>
         </div>
       </div>
     </Slide>

@@ -26,32 +26,32 @@ export function S03Oportunidad() {
         {/* 3 dark cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-6">
           {opportunities.map((o) => (
-            <div key={o.title} className="bg-charcoal rounded-xl p-5 sm:p-6">
-              <h3 className="text-white font-semibold text-base sm:text-lg mb-2">{o.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{o.description}</p>
+            <div key={o.title} className="bg-card rounded-xl p-5 sm:p-6">
+              <h3 className="text-foreground font-semibold text-base sm:text-lg mb-2">{o.title}</h3>
+              <p className="text-muted text-sm leading-relaxed">{o.description}</p>
             </div>
           ))}
         </div>
 
         {/* Demand vs Supply bar */}
-        <div className="bg-charcoal rounded-xl p-5 sm:p-7 mb-8">
+        <div className="bg-card rounded-xl p-5 sm:p-7 mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
             {/* Left side */}
             <div className="sm:w-1/3">
-              <p className="text-white/50 text-xs uppercase tracking-wider mb-1">Demanda vs Oferta</p>
-              <p className="text-white/40 text-xs">Brecha identificada</p>
+              <p className="text-muted/70 text-xs uppercase tracking-wider mb-1">Demanda vs Oferta</p>
+              <p className="text-muted/60 text-xs">Brecha identificada</p>
             </div>
 
             {/* Center bar */}
             <div className="flex-1">
-              <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+              <div className="h-3 bg-foreground/10 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-primary to-primary-light rounded-full animate-bar-width"
                   style={{ "--target-width": "75%" } as React.CSSProperties}
                 />
               </div>
               <div className="flex justify-between mt-1.5">
-                <span className="text-white/40 text-xs">Oferta actual</span>
+                <span className="text-muted/60 text-xs">Oferta actual</span>
                 <span className="text-primary-light text-xs font-medium">Demanda insatisfecha</span>
               </div>
             </div>
@@ -59,7 +59,7 @@ export function S03Oportunidad() {
             {/* Right side: price */}
             <div className="sm:text-right">
               <p className="font-display text-2xl sm:text-3xl text-primary-light leading-none">$5M+</p>
-              <p className="text-white/50 text-xs mt-1">MXN · Segmento objetivo</p>
+              <p className="text-muted/70 text-xs mt-1">MXN · Segmento objetivo</p>
             </div>
           </div>
         </div>
