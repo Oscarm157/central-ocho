@@ -34,7 +34,7 @@ const phases = [
   },
   {
     fase: "Fase 3",
-    priceDisplay: "$5.8 – $6M",
+    priceDisplay: "$5.7 – $5.8M",
     price: 5.9,
     useCounter: false,
     label: "Precio de mercado al término de obra",
