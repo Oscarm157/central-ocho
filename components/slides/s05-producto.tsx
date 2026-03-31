@@ -58,14 +58,14 @@ export function S05Producto() {
           <QuoteBlock text={quotes.s05} />
         </div>
 
-        {/* Columna derecha — video completo */}
-        <div className="relative rounded-xl overflow-hidden bg-card h-[420px] sm:h-[500px]">
+        {/* Columna derecha — video sin cortes */}
+        <div className="rounded-xl overflow-hidden bg-card">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-auto block"
           >
             <source src="/images/video-render.mp4" type="video/mp4" />
           </video>
