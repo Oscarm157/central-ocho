@@ -1,21 +1,21 @@
-import Image from "next/image";
 import { project } from "@/lib/data";
 
 export function S01Hero() {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/images/hero-fachada.png"
-        alt="Central Ocho — Fachada"
-        fill
-        className="object-cover"
-        priority
-        quality={85}
-      />
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/images/hero-video.mp4" type="video/mp4" />
+      </video>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
       {/* Top label */}
       <div className="absolute top-20 left-0 right-0 flex justify-center hero-fade-in">
@@ -36,7 +36,7 @@ export function S01Hero() {
           {project.location}
         </p>
 
-        {/* Scroll indicator */}
+        {/* Next indicator */}
         <div className="mt-10 flex flex-col items-center gap-1 hero-fade-in-delayed-3">
           <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">Siguiente</span>
           <span className="material-symbols-outlined text-white/40 animate-bounce-down" style={{ fontSize: 20 }}>

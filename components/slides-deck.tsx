@@ -111,9 +111,18 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
         </div>
       ))}
 
-      {/* Top-left branding */}
-      <div className="absolute top-0 left-0 z-50 px-4 sm:px-6 py-3 sm:py-4">
+      {/* Top-left branding + Inicio button */}
+      <div className="absolute top-0 left-0 z-50 flex items-center gap-3 px-4 sm:px-6 py-3 sm:py-4">
         <span className="font-display text-sm text-foreground/70">CENTRAL OCHO</span>
+        {current > 0 && (
+          <button
+            onClick={() => goTo(0, "prev")}
+            className="flex items-center gap-1 text-xs text-concrete hover:text-foreground transition-all"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>home</span>
+            <span className="hidden sm:inline">Inicio</span>
+          </button>
+        )}
       </div>
 
       {/* Top-right controls */}
