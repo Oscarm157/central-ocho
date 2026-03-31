@@ -27,7 +27,7 @@ export function S01Hero({ variant = "portada" }: S01HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
       <div className="absolute top-20 left-0 right-0 flex justify-center hero-fade-in">
-        <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#A67C00] font-medium">
+        <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-white/70 font-medium">
           Pitch Deck de Inversión · {project.year}
         </span>
       </div>
