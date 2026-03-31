@@ -59,12 +59,12 @@ export function ImageLightbox({ images, initialIndex = 0, onClose }: ImageLightb
         </button>
       </div>
 
-      {/* Imagen */}
-      <div
-        className="flex-1 flex items-center justify-center px-4 min-h-0"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative w-full max-w-5xl h-full">
+      {/* Imagen — click en la imagen no cierra, click en el área oscura sí */}
+      <div className="flex-1 flex items-center justify-center px-4 min-h-0">
+        <div
+          className="relative w-full max-w-5xl h-full"
+          onClick={(e) => e.stopPropagation()}
+        >
           <Image
             src={images[index].src}
             alt={images[index].alt}
