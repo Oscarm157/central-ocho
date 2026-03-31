@@ -62,7 +62,7 @@ export function S04Ubicacion() {
 
             {/* Mapa */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1500!2d-116.98886!3d32.518612073772786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMxJzA3LjAiTiAxMTbCsDU5JzE5LjUiVw!5e0!3m2!1ses-419!2smx!4v1774980142193!5m2!1ses-419!2smx"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2500!2d-116.98886!3d32.518612073772786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMxJzA3LjAiTiAxMTbCsDU5JzE5LjUiVw!5e0!3m2!1ses-419!2smx!4v1774980142193!5m2!1ses-419!2smx"
               className="absolute inset-0 w-full h-full"
               style={{ border: 0 }}
               allowFullScreen
@@ -72,10 +72,10 @@ export function S04Ubicacion() {
             />
 
             {/* Tarjeta flotante — Zona de Influencia */}
-            <div className="absolute bottom-3 left-3 right-3">
+            <div className="absolute bottom-8 left-3 right-3">
               <div className="bg-background/90 backdrop-blur-md rounded-xl border border-card-border overflow-hidden">
-                <div className="px-4 py-2.5 border-b border-card-border/60 flex items-center justify-between">
-                  <h3 className="text-foreground font-semibold text-sm">Zona de Influencia</h3>
+                <div className="px-4 py-2.5 border-b border-card-border/60 flex items-center justify-between bg-foreground/5">
+                  <h3 className="text-foreground/90 font-semibold text-sm">Zona de Influencia</h3>
                   <span className="text-primary-light font-mono text-xs">{proximity.length} puntos clave</span>
                 </div>
                 <div className="grid grid-cols-2">
