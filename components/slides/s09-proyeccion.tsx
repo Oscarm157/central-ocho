@@ -1,34 +1,44 @@
 "use client";
 
 import { Slide } from "@/components/slide";
-import { SectionHeader } from "@/components/ui/section-header";
-import { StatCard } from "@/components/ui/stat-card";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { QuoteBlock } from "@/components/ui/quote-block";
 import { pricing, project, quotes } from "@/lib/data";
 
 export function S09Proyeccion() {
   return (
     <Slide>
-      <div className="stagger-in">
-        <SectionHeader number="09" title="PROYECCIÓN DE INGRESOS" />
+      <div className="stagger-in flex flex-col items-center justify-center text-center h-full">
+        {/* Label */}
+        <p className="uppercase tracking-wider text-primary-light text-xs sm:text-sm font-medium mb-6">
+          Proyección de Ingresos
+        </p>
 
-        {/* Hero stat */}
-        <div className="text-center mb-8">
-          <div className="font-mono text-6xl sm:text-7xl md:text-8xl text-primary font-medium">
-            <AnimatedCounter target={pricing.totalRevenue} prefix="$" suffix="M" decimals={1} duration={2000} />
+        {/* Giant number */}
+        <div className="text-gradient font-mono text-5xl sm:text-6xl md:text-7xl font-medium mb-2">
+          <AnimatedCounter target={pricing.totalRevenue} prefix="$" suffix="M" decimals={1} duration={2000} />
+        </div>
+        <p className="text-muted text-base sm:text-lg mb-8">MXN en ingreso proyectado</p>
+
+        {/* 3 sub-stats with vertical dividers */}
+        <div className="flex items-start justify-center divide-x divide-card-border w-full max-w-2xl mb-8">
+          <div className="flex-1 px-4 sm:px-6">
+            <span className="font-mono text-3xl text-foreground font-medium">{project.units}</span>
+            <p className="text-muted text-sm mt-1">Unidades totales</p>
           </div>
-          <p className="text-muted text-lg mt-2">MXN en ingreso proyectado</p>
+          <div className="flex-1 px-4 sm:px-6">
+            <span className="font-mono text-3xl text-foreground font-medium">${pricing.averagePrice}M</span>
+            <p className="text-muted text-sm mt-1">Precio promedio estimado</p>
+          </div>
+          <div className="flex-1 px-4 sm:px-6">
+            <span className="font-mono text-3xl text-foreground font-medium">~${pricing.totalRevenue}M</span>
+            <p className="text-muted text-sm mt-1">Ingreso total proyectado</p>
+          </div>
         </div>
 
-        {/* Sub stats */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-5 mb-8">
-          <StatCard value={project.units} label="Unidades totales" />
-          <StatCard value={pricing.averagePrice} prefix="$" suffix="M" label="Precio prom. por unidad" decimals={1} />
-          <StatCard value={650} prefix="$" suffix="K" label="Plusvalía por unidad (13%)" />
+        {/* Quote in dark banner */}
+        <div className="bg-charcoal rounded-xl py-4 px-6 text-center w-full max-w-2xl">
+          <p className="text-white/70 text-sm sm:text-base italic">&ldquo;{quotes.s09}&rdquo;</p>
         </div>
-
-        <QuoteBlock text={quotes.s09} />
       </div>
     </Slide>
   );

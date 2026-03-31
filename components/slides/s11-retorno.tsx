@@ -1,41 +1,60 @@
 "use client";
 
 import { Slide } from "@/components/slide";
-import { SectionHeader } from "@/components/ui/section-header";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { QuoteBlock } from "@/components/ui/quote-block";
 import { investment, quotes } from "@/lib/data";
 
 export function S11Retorno() {
   return (
     <Slide className="bg-charcoal">
-      <div className="stagger-in">
-        <div className="mb-8 sm:mb-10">
-          <span className="font-mono text-sm text-white/20 block mb-3">11</span>
-          <div className="w-[60px] h-[2px] bg-primary mb-4" />
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white">PROPUESTA DE RETORNO</h2>
-          <p className="mt-2 text-lg sm:text-xl text-white/50 font-medium">Rendimiento claro y estructurado</p>
+      <div className="stagger-in flex flex-col h-full">
+        {/* Header */}
+        <div className="mb-6 sm:mb-8">
+          <p className="uppercase tracking-wider text-primary-light/60 text-xs sm:text-sm font-medium mb-3">
+            Propuesta de Retorno
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white">
+            Rendimiento claro y estructurado
+          </h2>
         </div>
 
-        {/* Two big stats */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8">
-          <div className="text-center py-8 sm:py-12">
-            <div className="font-mono text-6xl sm:text-7xl md:text-8xl text-primary-light font-medium">
+        {/* 3 giant columns */}
+        <div className="flex items-start justify-center flex-1 mb-8">
+          {/* Column 1 — Rendimiento */}
+          <div className="flex-1 text-center px-4 sm:px-6">
+            <div className="text-gradient font-mono text-5xl sm:text-6xl md:text-7xl font-medium mb-2">
               <AnimatedCounter target={investment.annualReturn} suffix="%" duration={1500} />
             </div>
-            <p className="text-white/50 text-base sm:text-lg mt-3">Rendimiento anual</p>
+            <p className="text-white/50 text-sm sm:text-base">Rendimiento anual</p>
           </div>
-          <div className="text-center py-8 sm:py-12">
-            <div className="font-mono text-6xl sm:text-7xl md:text-8xl text-primary-light font-medium">
+
+          {/* Divider */}
+          <div className="border-l border-white/10 self-stretch" />
+
+          {/* Column 2 — Frecuencia */}
+          <div className="flex-1 text-center px-4 sm:px-6">
+            <div className="text-white font-display text-5xl sm:text-6xl font-bold mb-2">
+              Anual
+            </div>
+            <p className="text-white/50 text-sm sm:text-base">Pago de rendimientos</p>
+          </div>
+
+          {/* Divider */}
+          <div className="border-l border-white/10 self-stretch" />
+
+          {/* Column 3 — Plazo */}
+          <div className="flex-1 text-center px-4 sm:px-6">
+            <div className="text-gradient font-mono text-5xl sm:text-6xl md:text-7xl font-medium mb-2">
               <AnimatedCounter target={investment.maxMonths} duration={1500} />
             </div>
-            <p className="text-white/50 text-base sm:text-lg mt-3">Meses máximo · Pago de rendimientos</p>
+            <p className="text-white/50 text-sm sm:text-base">Meses máximo</p>
           </div>
         </div>
 
-        <blockquote className="border-l-[3px] border-primary bg-white/5 px-6 py-4 rounded-r-lg">
-          <p className="font-display text-base sm:text-lg text-white/70 italic">&ldquo;{quotes.s11}&rdquo;</p>
-        </blockquote>
+        {/* Quote in bordered box */}
+        <div className="border border-primary/30 rounded-lg py-4 px-8 text-center">
+          <p className="text-white/60 italic text-sm sm:text-base">&ldquo;{quotes.s11}&rdquo;</p>
+        </div>
       </div>
     </Slide>
   );

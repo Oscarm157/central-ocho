@@ -26,7 +26,7 @@ export function S01Hero() {
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 sm:pb-28 px-6">
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white text-center hero-fade-in-delayed">
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.3em] text-white text-center hero-fade-in-delayed">
           {project.name}
         </h1>
         <p className="mt-4 text-sm sm:text-base uppercase tracking-[0.2em] text-[#D4C5B2] font-medium hero-fade-in-delayed-2">

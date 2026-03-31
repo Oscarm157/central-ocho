@@ -39,7 +39,7 @@ export function S13Cierre() {
             href={contact.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-lg transition-colors text-sm sm:text-base"
+            className="btn-shimmer inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-lg transition-colors text-sm sm:text-base"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 20 }}>arrow_forward</span>
             Agendar reunión

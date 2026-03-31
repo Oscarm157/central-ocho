@@ -1,36 +1,43 @@
 import { Slide } from "@/components/slide";
-import { SectionHeader } from "@/components/ui/section-header";
-import { FeatureCard } from "@/components/ui/feature-card";
-import { QuoteBlock } from "@/components/ui/quote-block";
+import { CopperIcon } from "@/components/ui/copper-icon";
 import { security, quotes } from "@/lib/data";
 
-const icons = ["real_estate_agent", "pin_drop", "verified", "inventory_2"];
+const icons = ["home", "location", "check", "inventory"];
 
 export function S12Respaldo() {
   return (
-    <Slide>
+    <Slide className="bg-charcoal">
       <div className="stagger-in">
-        <SectionHeader number="12" title="RESPALDO Y SEGURIDAD" subtitle="Inversión con piso firme" />
+        {/* Header */}
+        <div className="mb-8 sm:mb-10">
+          <span className="font-mono text-sm text-white/20 block mb-3">12</span>
+          <div className="w-[60px] h-[2px] bg-primary mb-4" />
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white">RESPALDO Y SEGURIDAD</h2>
+          <p className="mt-2 text-lg sm:text-xl text-white/50 font-medium">Inversión con piso firme</p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8">
+        {/* 2x2 grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-6">
           {security.map((s, i) => (
-            <FeatureCard
-              key={s.title}
-              icon={icons[i]}
-              title={s.title}
-              description={s.description}
-              borderAccent
-            />
+            <div key={s.title} className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6">
+              <CopperIcon name={icons[i]} size={28} className="mb-3" />
+              <h3 className="text-white font-semibold text-base sm:text-lg mb-1.5">{s.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{s.description}</p>
+            </div>
           ))}
         </div>
 
-        <div className="text-center bg-card/60 rounded-xl py-4 px-6 mb-6">
-          <p className="text-muted text-sm">
-            <span className="text-primary font-medium">4 pilares de seguridad</span>
-          </p>
+        {/* Bottom bar */}
+        <div className="bg-white/5 rounded-xl p-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <CopperIcon name="check" size={20} />
+            <span className="text-white/70 text-sm">{quotes.s12}</span>
+          </div>
+          <div className="text-right shrink-0 ml-4">
+            <span className="text-white/50 text-xs block">Seguridad</span>
+            <span className="text-gradient font-semibold text-sm">4 pilares</span>
+          </div>
         </div>
-
-        <QuoteBlock text={quotes.s12} />
       </div>
     </Slide>
   );
