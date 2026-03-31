@@ -1,6 +1,12 @@
+"use client";
+
 import { project } from "@/lib/data";
 
 export function S01Hero() {
+  const goNext = () => {
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+  };
+
   return (
     <div className="relative w-full h-full overflow-hidden">
       {/* Background video */}
@@ -36,14 +42,17 @@ export function S01Hero() {
           {project.location}
         </p>
 
-        {/* CTA indicator */}
+        {/* CTA */}
         <div className="mt-10 hero-fade-in-delayed-3">
-          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all cursor-default">
-            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/70 font-medium">Ver propuesta</span>
+          <button
+            onClick={goNext}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 active:scale-95 transition-all"
+          >
+            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/70 font-medium">Iniciar</span>
             <span className="material-symbols-outlined text-[#A67C00] animate-bounce-down" style={{ fontSize: 18 }}>
               arrow_forward
             </span>
-          </div>
+          </button>
         </div>
       </div>
     </div>
