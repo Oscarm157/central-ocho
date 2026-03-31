@@ -58,8 +58,8 @@ export function S05Producto() {
           <QuoteBlock text={quotes.s05} />
         </div>
 
-        {/* Columna derecha — video sin cortes */}
-        <div className="rounded-xl overflow-hidden bg-card">
+        {/* Columna derecha — video sin cortes, bajado del titulo */}
+        <div className="rounded-xl overflow-hidden bg-card mt-10 sm:mt-14">
           <video
             autoPlay
             muted
