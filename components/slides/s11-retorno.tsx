@@ -2,58 +2,70 @@
 
 import { Slide } from "@/components/slide";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { investment, quotes } from "@/lib/data";
+import { CopperIcon } from "@/components/ui/copper-icon";
+import { investment, security, quotes } from "@/lib/data";
+
+const icons = ["home", "location", "check", "inventory"];
 
 export function S11Retorno() {
   return (
-    <Slide className="bg-card">
-      <div className="stagger-in flex flex-col h-full">
+    <Slide>
+      <div className="stagger-in flex flex-col">
         {/* Header */}
-        <div className="mb-6 sm:mb-8">
-          <p className="uppercase tracking-wider text-primary-light/60 text-xs sm:text-sm font-medium mb-3">
-            Propuesta de Retorno
-          </p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground">
-            Rendimiento claro y estructurado
-          </h2>
+        <div className="mb-5">
+          <div className="w-[60px] h-[2px] bg-primary mb-3" />
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground">RETORNO Y RESPALDO</h2>
+          <p className="mt-1 text-sm sm:text-base text-muted">Rendimiento claro · Inversión con piso firme</p>
         </div>
 
-        {/* 3 giant columns */}
-        <div className="flex items-start justify-center flex-1 mb-8">
-          {/* Column 1 — Rendimiento */}
+        {/* 3 retorno columns */}
+        <div className="flex items-start justify-center mb-5">
           <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-gradient font-mono text-5xl sm:text-6xl md:text-7xl font-medium mb-2">
+            <div className="text-gradient font-mono text-4xl sm:text-5xl md:text-6xl font-medium mb-1">
               <AnimatedCounter target={investment.annualReturn} suffix="%" duration={1500} />
             </div>
-            <p className="text-muted text-sm sm:text-base">Rendimiento anual</p>
+            <p className="text-muted text-xs sm:text-sm">Rendimiento anual</p>
           </div>
 
-          {/* Divider */}
           <div className="border-l border-card-border self-stretch" />
 
-          {/* Column 2 — Frecuencia */}
           <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-foreground font-display text-5xl sm:text-6xl font-bold mb-2">
+            <div className="text-foreground font-display text-4xl sm:text-5xl font-bold mb-1">
               Anual
             </div>
-            <p className="text-muted text-sm sm:text-base">Pago de rendimientos</p>
+            <p className="text-muted text-xs sm:text-sm">Pago de rendimientos</p>
           </div>
 
-          {/* Divider */}
           <div className="border-l border-card-border self-stretch" />
 
-          {/* Column 3 — Plazo */}
           <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-gradient font-mono text-5xl sm:text-6xl md:text-7xl font-medium mb-2">
+            <div className="text-gradient font-mono text-4xl sm:text-5xl md:text-6xl font-medium mb-1">
               <AnimatedCounter target={investment.maxMonths} duration={1500} />
             </div>
-            <p className="text-muted text-sm sm:text-base">Meses máximo</p>
+            <p className="text-muted text-xs sm:text-sm">Meses máximo</p>
           </div>
         </div>
 
-        {/* Quote in bordered box */}
-        <div className="border border-primary/30 rounded-lg py-4 px-8 text-center">
-          <p className="text-muted italic text-sm sm:text-base">&ldquo;{quotes.s11}&rdquo;</p>
+        {/* Divider */}
+        <div className="border-t border-card-border mb-5" />
+
+        {/* Respaldo — 4 items in a row */}
+        <p className="uppercase tracking-wider text-primary-light text-xs font-medium mb-4 text-center">
+          Respaldo y Seguridad
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-5">
+          {security.map((s, i) => (
+            <div key={s.title} className="bg-card border border-card-border rounded-xl p-4">
+              <CopperIcon name={icons[i]} size={20} className="mb-2" />
+              <h3 className="text-foreground font-semibold text-xs sm:text-sm mb-1">{s.title}</h3>
+              <p className="text-muted text-xs leading-relaxed">{s.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Quote */}
+        <div className="border border-primary/30 rounded-lg py-3 px-6 text-center">
+          <p className="text-muted italic text-xs sm:text-sm">&ldquo;{quotes.s11}&rdquo;</p>
         </div>
       </div>
     </Slide>
