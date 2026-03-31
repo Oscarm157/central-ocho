@@ -54,16 +54,14 @@ export function S07Diferenciadores() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="bg-background/70 border border-card-border rounded-xl px-5 py-4">
-          <div className="grid grid-cols-4 divide-x divide-card-border">
-            {items.map((d) => (
-              <div key={d.title} className="flex flex-col items-center gap-2 px-3 text-center">
-                <CopperIcon name={d.icon} size={20} />
-                <span className="text-muted text-xs leading-tight">{d.title}</span>
-              </div>
-            ))}
-          </div>
+        {/* Bottom bar — ventajas adicionales */}
+        <div className="bg-background/70 border border-card-border rounded-xl px-5 py-3.5 flex items-center justify-center gap-2 flex-wrap">
+          {["Roof privado", "Diseño contemporáneo", "Garage integrado", "Acabados premium"].map((v, i, arr) => (
+            <span key={v} className="flex items-center gap-2">
+              <span className="text-foreground/70 text-xs sm:text-sm">{v}</span>
+              {i < arr.length - 1 && <span className="text-primary/40 text-xs">·</span>}
+            </span>
+          ))}
         </div>
       </div>
     </Slide>
