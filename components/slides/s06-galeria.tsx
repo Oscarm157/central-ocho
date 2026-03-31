@@ -8,9 +8,9 @@ import { ImageLightbox } from "@/components/ui/image-lightbox";
 const allImages = [
   { src: "/images/hero-fachada.png", alt: "Fachada Central Ocho", label: "Fachada · Vista frontal · Atardecer" },
   { src: "/images/planta-garage.png", alt: "Planta garage", label: "Planta Baja · Garage" },
-  { src: "/images/planta-rooftop.png", alt: "Rooftop", label: "Roof · Terraza privada" },
-  { src: "/images/planta-social.png", alt: "Área social", label: "Nivel 1 · Área social" },
+  { src: "/images/planta-social.png", alt: "Área social", label: "Nivel 1 · Sala y Comedor" },
   { src: "/images/planta-recamaras.png", alt: "Recámaras", label: "Nivel 2 · Recámaras" },
+  { src: "/images/planta-rooftop.png", alt: "Rooftop", label: "Roof · Terraza privada" },
 ];
 
 const plants = allImages.slice(1);
