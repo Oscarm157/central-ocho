@@ -37,23 +37,25 @@ export function ImageLightbox({ images, initialIndex = 0, onClose }: ImageLightb
       className="fixed inset-0 z-[9999] bg-black/92 backdrop-blur-sm flex flex-col"
       onClick={onClose}
     >
-      {/* Título arriba centrado + cerrar */}
+      {/* Título arriba centrado */}
       <div
-        className="flex items-center justify-between px-6 py-4 shrink-0"
+        className="flex flex-col items-center pt-5 pb-2 shrink-0"
         onClick={(e) => e.stopPropagation()}
       >
-        <span className="text-white/30 font-mono text-xs">
-          {images.length > 1 ? `${index + 1} / ${images.length}` : ""}
-        </span>
-        <p className="text-white/80 text-sm font-medium text-center flex-1 px-4">
-          {images[index].label ?? images[index].alt}
-        </p>
+        <div className="flex items-center gap-3 mb-2">
+          {images.length > 1 && (
+            <span className="text-white/30 font-mono text-xs">{index + 1} / {images.length}</span>
+          )}
+          <p className="text-white/80 text-sm font-medium">
+            {images[index].label ?? images[index].alt}
+          </p>
+        </div>
         <button
           onClick={onClose}
-          className="text-white/50 hover:text-white transition-colors flex items-center gap-1 text-sm shrink-0"
+          className="text-white/40 hover:text-white transition-colors flex items-center gap-1 text-xs"
         >
-          <span className="material-symbols-outlined" style={{ fontSize: 18 }}>close</span>
-          <span className="hidden sm:inline">Cerrar</span>
+          <span className="material-symbols-outlined" style={{ fontSize: 15 }}>close</span>
+          <span>Cerrar</span>
         </button>
       </div>
 
