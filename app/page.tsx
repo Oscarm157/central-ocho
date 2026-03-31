@@ -25,6 +25,7 @@ export default function Home() {
       <S08Estrategia />
       <S09Proyeccion />
       <S11Retorno />
+      <S01Hero />
     </SlidesDeck>
   );
 }
