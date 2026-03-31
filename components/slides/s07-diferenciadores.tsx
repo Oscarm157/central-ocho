@@ -3,24 +3,24 @@ import { CopperIcon } from "@/components/ui/copper-icon";
 
 const items = [
   {
-    icon: "roofing",
-    title: "Roof privado",
-    description: "El amenity que cierra ventas. Espacio premium exclusivo.",
+    icon: "inventory",
+    title: "Escasez de casas",
+    description: "El corredor de Buena Vista está dominado por departamentos. Una casa nueva es una ventaja competitiva real en un mercado sin oferta comparable.",
   },
   {
-    icon: "design",
-    title: "Diseño real, no genérico",
-    description: "Arquitectura que el comprador presume.",
+    icon: "connect",
+    title: "Acceso estratégico",
+    description: "A metros de la vía rápida. Conectividad inmediata con toda la ciudad: Zona Río, garita, centro, aeropuerto — todo a menos de 15 minutos.",
   },
   {
     icon: "shield",
-    title: "Baja densidad",
-    description: "Solo 8 vecinos. Privacidad y plusvalía protegida.",
+    title: "Privacidad garantizada",
+    description: "Solo 8 unidades. Sin pasillos, sin elevadores, sin vecinos desconocidos. La densidad baja no es un atributo secundario — es el producto.",
   },
   {
     icon: "chart",
-    title: "Valor vs. precio",
-    description: "Más metros y mejor diseño al mismo precio.",
+    title: "Zona en crecimiento",
+    description: "Buena Vista consolida su posición como alternativa sólida a Zona Dorada. Plusvalía comprobada, infraestructura madura y demanda sostenida.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function S07Diferenciadores() {
             Diferenciadores
           </p>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground">
-            ¿Por qué se vende fácil?
+            Ventajas competitivas
           </h2>
         </div>
 
@@ -54,7 +54,7 @@ export function S07Diferenciadores() {
           ))}
         </div>
 
-        {/* Bottom bar — 4 pillars as icons */}
+        {/* Bottom bar */}
         <div className="bg-background/70 border border-card-border rounded-xl px-5 py-4">
           <div className="grid grid-cols-4 divide-x divide-card-border">
             {items.map((d) => (
