@@ -85,8 +85,7 @@ export function S08Estrategia() {
             <div>
               <p className="text-muted/70 text-xs mb-0.5">Plusvalía capturada por unidad</p>
               <span className="text-primary-light font-mono text-2xl sm:text-3xl font-medium">
-                <AnimatedCounter target={650000} prefix="$" suffix="" duration={1500} />
-                <span className="text-lg text-muted ml-1">MXN</span>
+                $650,000 <span className="text-lg text-muted">MXN</span>
               </span>
             </div>
           </div>
