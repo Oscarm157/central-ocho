@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Plus_Jakarta_Sans, DM_Mono } from "next/font/google";
+import { DM_Serif_Display, Plus_Jakarta_Sans, DM_Mono, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 
 const serif = DM_Serif_Display({
@@ -20,6 +20,12 @@ const mono = DM_Mono({
   weight: ["400", "500"],
 });
 
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Central Ocho — Pitch Deck de Inversión",
   description: "Desarrollo boutique de 8 townhouses en Buena Vista, Tijuana. Oportunidad de inversión.",
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${serif.variable} ${jakarta.variable} ${mono.variable} antialiased`}>
+    <html lang="es" className={`${serif.variable} ${jakarta.variable} ${mono.variable} ${bodoni.variable} antialiased`}>
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
       </head>

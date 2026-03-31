@@ -19,7 +19,7 @@ export function S13Cierre() {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
         <div className="stagger-in max-w-2xl">
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-6">
+          <h2 className="font-[family-name:var(--font-bodoni)] text-4xl sm:text-5xl md:text-6xl text-white mb-6 uppercase tracking-[0.2em]">
             {project.name}
           </h2>
 
@@ -52,7 +52,7 @@ export function S13Cierre() {
             <a href={`mailto:${contact.email}`} className="block hover:text-white/60 transition-colors">{contact.email}</a>
           </div>
 
-          <p className="mt-10 text-white/20 text-xs uppercase tracking-[0.2em]">
+          <p className="mt-10 text-white/20 text-xs uppercase tracking-[0.2em] font-[family-name:var(--font-bodoni)]">
             {project.name} · {project.location} · {project.year}
           </p>
         </div>

@@ -113,7 +113,7 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
 
       {/* Top-left branding + Inicio button */}
       <div className="absolute top-0 left-0 z-50 flex items-center gap-3 px-4 sm:px-6 py-3 sm:py-4">
-        <span className="font-display text-sm text-foreground/70">CENTRAL OCHO</span>
+        <span className="font-[family-name:var(--font-bodoni)] text-sm text-foreground/70 uppercase tracking-wider">CENTRAL OCHO</span>
         {current > 0 && (
           <button
             onClick={() => goTo(0, "prev")}
