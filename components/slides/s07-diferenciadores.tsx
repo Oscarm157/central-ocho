@@ -3,14 +3,14 @@ import { CopperIcon } from "@/components/ui/copper-icon";
 
 const items = [
   {
-    icon: "inventory",
-    title: "Escasez de casas",
-    description: "La zona de Buena Vista está dominada por departamentos. Una casa nueva representa una ventaja competitiva real en un mercado sin oferta comparable.",
-  },
-  {
     icon: "connect",
     title: "Acceso estratégico",
     description: "A metros de la vía rápida. Conectividad inmediata con toda la ciudad: Zona Río, Garita, Centro, Aeropuerto — todo a menos de 15 minutos.",
+  },
+  {
+    icon: "inventory",
+    title: "Escasez de casas",
+    description: "La zona de Buena Vista está dominada por departamentos. Una casa nueva representa una ventaja competitiva real en un mercado sin oferta comparable.",
   },
   {
     icon: "shield",
