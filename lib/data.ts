@@ -33,8 +33,8 @@ export const pricing = {
 };
 
 export const investment = {
-  annualReturn: 20,
-  maxMonths: 24,
+  annualReturn: 15,
+  maxMonths: 30,
 };
 
 export const proximity = [
