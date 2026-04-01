@@ -56,6 +56,15 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
   }, [next, prev, goTo, total]);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    Array.from(container.children).forEach((slideWrapper) => {
+      const scrollable = slideWrapper.firstElementChild;
+      if (scrollable) scrollable.scrollTop = 0;
+    });
+  }, [current]);
+
+  useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const onTouchStart = (e: TouchEvent) => {
