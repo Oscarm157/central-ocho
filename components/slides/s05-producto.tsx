@@ -59,7 +59,7 @@ export function S05Producto() {
         </div>
 
         {/* Columna derecha — video sin cortes, 80% ancho */}
-        <div className="rounded-xl overflow-hidden bg-card mt-10 sm:mt-14 w-4/5">
+        <div className="rounded-xl overflow-hidden bg-card mt-6 sm:mt-10 lg:mt-14 w-4/5 mx-auto lg:mx-0">
           <video
             autoPlay
             muted

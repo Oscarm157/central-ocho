@@ -36,12 +36,12 @@ export function S02Concepto() {
 
         {/* Giant 8 */}
         <div className="relative mb-2">
-          <span className="font-[family-name:var(--font-bodoni)] text-[120px] sm:text-[160px] md:text-[200px] leading-none text-primary/15 select-none animate-number block">
+          <span className="font-[family-name:var(--font-bodoni)] text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] leading-none text-primary/15 select-none animate-number block">
             8
           </span>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="font-display text-3xl sm:text-4xl md:text-5xl text-foreground">Exclusividad</span>
-            <span className="font-display text-3xl sm:text-4xl md:text-5xl text-primary">por diseño</span>
+            <span className="font-display text-2xl sm:text-3xl md:text-4xl md:text-5xl text-foreground">Exclusividad</span>
+            <span className="font-display text-2xl sm:text-3xl md:text-4xl md:text-5xl text-primary">por diseño</span>
           </div>
         </div>
 

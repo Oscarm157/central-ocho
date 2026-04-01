@@ -19,20 +19,20 @@ export function S11Retorno() {
 
         {/* 3 retorno columns */}
         <div className="flex items-start justify-center mb-5">
-          <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-gradient font-mono text-4xl sm:text-5xl md:text-6xl font-medium mb-1">
+          <div className="flex-1 text-center px-3 sm:px-6">
+            <div className="text-gradient font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-1">
               <AnimatedCounter target={investment.annualReturn} suffix="%" duration={1500} />
             </div>
             <p className="text-muted text-xs sm:text-sm">Rendimiento anual</p>
           </div>
           <div className="border-l border-card-border self-stretch" />
-          <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-foreground font-display text-4xl sm:text-5xl font-bold mb-1">Anual</div>
+          <div className="flex-1 text-center px-3 sm:px-6">
+            <div className="text-foreground font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-1">Anual</div>
             <p className="text-muted text-xs sm:text-sm">Pago de rendimientos</p>
           </div>
           <div className="border-l border-card-border self-stretch" />
-          <div className="flex-1 text-center px-4 sm:px-6">
-            <div className="text-gradient font-mono text-4xl sm:text-5xl md:text-6xl font-medium mb-1">
+          <div className="flex-1 text-center px-3 sm:px-6">
+            <div className="text-gradient font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-1">
               <AnimatedCounter target={investment.maxMonths} duration={1500} />
             </div>
             <p className="text-muted text-xs sm:text-sm">Meses máximo</p>

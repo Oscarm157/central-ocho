@@ -112,7 +112,7 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
       ))}
 
       {/* Top-left branding + Inicio button */}
-      <div className="absolute top-0 left-0 z-50 flex items-center gap-3 px-4 sm:px-6 py-3 sm:py-4">
+      <div className="absolute top-0 left-0 z-50 flex items-center gap-3 px-4 sm:px-6 py-3 sm:py-4" style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}>
         <span className="font-[family-name:var(--font-bodoni)] text-sm text-foreground/70 uppercase tracking-wider">CENTRAL OCHO</span>
         {current > 0 && (
           <button
@@ -126,26 +126,26 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
       </div>
 
       {/* Top-right controls */}
-      <div className="absolute top-0 right-0 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4">
+      <div className="absolute top-0 right-0 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4" style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}>
         <span className="text-xs font-mono text-concrete tabular-nums">
           {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
         <div className="flex items-center gap-1">
-          <button onClick={prev} disabled={current === 0} className="w-8 h-8 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all">
-            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>chevron_left</span>
+          <button onClick={prev} disabled={current === 0} className="w-11 h-11 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all">
+            <span className="material-symbols-outlined" style={{ fontSize: 20 }}>chevron_left</span>
           </button>
-          <button onClick={next} disabled={current === total - 1} className="w-8 h-8 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all">
-            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>chevron_right</span>
+          <button onClick={next} disabled={current === total - 1} className="w-11 h-11 rounded-lg flex items-center justify-center text-concrete hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all">
+            <span className="material-symbols-outlined" style={{ fontSize: 20 }}>chevron_right</span>
           </button>
         </div>
-        <button onClick={toggleFullscreen} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all" title="Fullscreen (F)">
+        <button onClick={toggleFullscreen} className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-concrete hover:text-foreground hover:bg-card transition-all" title="Fullscreen (F)">
           <span className="material-symbols-outlined" style={{ fontSize: 16 }}>{isFullscreen ? "fullscreen_exit" : "fullscreen"}</span>
           <span className="text-xs font-medium hidden sm:inline">{isFullscreen ? "Salir" : "Fullscreen"}</span>
         </button>
       </div>
 
       {/* Bottom progress bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-50 px-6 py-3">
+      <div className="absolute bottom-0 left-0 right-0 z-50 px-6 py-3" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
         <div className="h-0.5 bg-card-border rounded-full overflow-hidden">
           <div className="h-full bg-primary transition-all duration-500 ease-out rounded-full" style={{ width: `${((current + 1) / total) * 100}%` }} />
         </div>

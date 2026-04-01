@@ -41,11 +41,11 @@ export function S09Proyeccion() {
         <p className="uppercase tracking-wider text-primary-light text-xs font-medium mb-4">
           Modelo de Ejecución
         </p>
-        <div className="flex items-start justify-center gap-2 sm:gap-4 w-full max-w-3xl">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-3 sm:gap-2 lg:gap-4 w-full max-w-3xl">
           {execution.map((step, i) => (
-            <div key={step.number} className="flex items-start">
+            <div key={step.number} className="flex flex-col sm:flex-row items-center sm:items-start w-full sm:flex-1">
               <div
-                className="flex flex-col items-center text-center max-w-[160px] sm:max-w-[200px]"
+                className="flex flex-col items-center text-center w-full sm:max-w-[160px] lg:max-w-[200px]"
                 style={{ opacity: 0, animation: `staggerChild 0.5s cubic-bezier(0.16,1,0.3,1) ${0.4 + i * 0.15}s forwards` }}
               >
                 <div className="w-10 h-10 bg-primary/15 border border-primary/30 rounded-lg flex items-center justify-center mb-2">
@@ -59,7 +59,10 @@ export function S09Proyeccion() {
                 </div>
               </div>
               {i < execution.length - 1 && (
-                <span className="text-primary/40 text-xl font-light mt-2 mx-1 sm:mx-2 shrink-0">&rarr;</span>
+                <>
+                  <span className="text-primary/40 text-xl font-light sm:mt-2 sm:mx-1 lg:mx-2 shrink-0 hidden sm:block">&rarr;</span>
+                  <span className="text-primary/40 text-lg font-light shrink-0 sm:hidden">↓</span>
+                </>
               )}
             </div>
           ))}
