@@ -28,8 +28,8 @@ export const pricing = {
   ],
   averagePrice: 5.5,
   totalRevenue: 44,
-  appreciationPerUnit: 650000,
-  appreciationPercent: 13.1,
+  appreciationPerUnit: 1500000,
+  appreciationPercent: 34.9,
 };
 
 export const investment = {

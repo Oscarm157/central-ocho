@@ -94,14 +94,14 @@ export function S08Estrategia() {
             <div>
               <p className="text-muted/70 text-xs mb-0.5">Plusvalía capturada por unidad</p>
               <span className="text-primary-light font-mono text-2xl sm:text-3xl font-medium">
-                $650,000 <span className="text-lg text-muted">MXN</span>
+                $1,500,000 <span className="text-lg text-muted">MXN</span>
               </span>
             </div>
           </div>
           <div className="sm:text-right sm:border-l sm:border-card-border sm:pl-5">
             <p className="text-muted/70 text-xs mb-0.5">De preventa a entrega</p>
             <span className="text-gradient font-mono text-xl sm:text-2xl font-medium">
-              13.1% incremento
+              34.9% incremento
             </span>
           </div>
         </div>
