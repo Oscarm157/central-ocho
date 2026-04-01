@@ -34,8 +34,8 @@ const phases = [
   },
   {
     fase: "Fase 3",
-    priceDisplay: "$5.7 – $5.8M",
-    price: 5.9,
+    priceDisplay: "$5.75M",
+    price: 5.75,
     useCounter: false,
     label: "Precio de mercado al término de obra",
     status: "Valor real una vez entregado",
@@ -94,14 +94,14 @@ export function S08Estrategia() {
             <div>
               <p className="text-muted/70 text-xs mb-0.5">Plusvalía capturada por unidad</p>
               <span className="text-primary-light font-mono text-2xl sm:text-3xl font-medium">
-                $1,500,000 <span className="text-lg text-muted">MXN</span>
+                $1,450,000 <span className="text-lg text-muted">MXN</span>
               </span>
             </div>
           </div>
           <div className="sm:text-right sm:border-l sm:border-card-border sm:pl-5">
             <p className="text-muted/70 text-xs mb-0.5">De preventa a entrega</p>
             <span className="text-gradient font-mono text-xl sm:text-2xl font-medium">
-              34.9% incremento
+              33.7% incremento
             </span>
           </div>
         </div>
