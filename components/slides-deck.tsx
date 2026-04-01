@@ -94,7 +94,7 @@ export function SlidesDeck({ children, storageKey = "central8-slide" }: SlidesDe
   if (!mounted) return null;
 
   return (
-    <div ref={containerRef} className="relative w-screen h-screen overflow-hidden bg-background">
+    <div ref={containerRef} className="relative w-screen h-screen overflow-x-hidden bg-background">
       {children.map((child, i) => (
         <div
           key={i}
