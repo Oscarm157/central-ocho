@@ -7,8 +7,8 @@ import { quotes } from "@/lib/data";
 const pillars = [
   {
     icon: "design",
-    title: "Diseño contemporáneo",
-    description: "Arquitectura que compite con desarrollos de mayor precio. Diseño intencional, no genérico.",
+    title: "Arquitectura con identidad",
+    description: "Un lenguaje arquitectónico propio que se distingue del producto estándar de la zona. Cada elemento tiene intención.",
   },
   {
     icon: "profile",
@@ -18,7 +18,7 @@ const pillars = [
   {
     icon: "shield",
     title: "Inventario limitado",
-    description: "Escasez por decisión. Cada unidad es parte de una colección exclusiva de 8.",
+    description: "8 unidades por vocación, no por restricción. Un formato que prioriza calidad sobre volumen.",
   },
 ];
 

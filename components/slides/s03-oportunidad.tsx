@@ -7,16 +7,16 @@ import { quotes } from "@/lib/data";
 
 const opportunities = [
   {
-    title: "Zona consolidada",
-    description: "Demanda constante y plusvalía comprobada en Buena Vista.",
+    title: "Zona sin casas nuevas",
+    description: "La oferta residencial en Buena Vista se limita a departamentos y vivienda usada. No hay casas nuevas disponibles.",
   },
   {
-    title: "Escasez real",
-    description: "Sin producto tipo townhouse en este corredor. Solo depto genérico o casa usada.",
+    title: "Demanda comprobada",
+    description: "La zona tiene absorción histórica sostenida. El comprador de $5M+ busca activamente pero no encuentra producto a su nivel.",
   },
   {
-    title: "Comprador existente",
-    description: "El comprador de $5M+ existe, pero no encuentra producto nuevo a su nivel.",
+    title: "Oportunidad clara",
+    description: "Quien construya casas nuevas en esta zona no compite — cubre un vacío. El mercado ya existe, la oferta no.",
   },
 ];
 
@@ -24,7 +24,7 @@ export function S03Oportunidad() {
   return (
     <Slide>
       <div className="stagger-in">
-        <SectionHeader number="03" title="LA OPORTUNIDAD" subtitle="La brecha que nadie está cubriendo" />
+        <SectionHeader number="03" title="LA OPORTUNIDAD" subtitle="En Buena Vista sobran departamentos y faltan casas" />
 
         {/* 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-6">

@@ -16,7 +16,7 @@ export const product = {
   distribution: [
     { level: "Planta baja", description: "Área social abierta y garage integrado. Espacios conectados, iluminación natural." },
     { level: "Niveles superiores", description: "Recámaras amplias con buena iluminación. Privacidad y confort." },
-    { level: "Roof", description: "Espacio premium de convivencia con vista. El amenity que cierra ventas." },
+    { level: "Roof", description: "Terraza privada con vista. Un espacio de convivencia que distingue al producto." },
   ],
 };
 
@@ -57,7 +57,7 @@ export const security = [
   { title: "Activo físico", description: "Capital respaldado por un proyecto real en construcción. Terreno, materiales, avance tangible." },
   { title: "Ubicación validada", description: "Zona con demanda comprobada y absorción histórica. La ubicación resuelve la salida." },
   { title: "Producto probado", description: "Townhouse: formato con mayor tracción en este segmento. El comprador lo conoce y lo busca." },
-  { title: "Inventario limitado", description: "Solo 8 unidades. El riesgo de sobreinventario no existe. Exclusividad que protege el valor." },
+  { title: "Colocación controlada", description: "Solo 8 unidades. Sin riesgo de sobreinventario. Un volumen que facilita la venta completa en ciclo corto." },
 ];
 
 export const execution = [
@@ -74,9 +74,9 @@ export const contact = {
 };
 
 export const quotes = {
-  s02: "No es un desarrollo masivo. Es un producto preciso para un mercado que ya existe.",
+  s02: "Ocho hogares diseñados con la convicción de que menos, bien hecho, siempre vale más.",
   s03: "Producto correcto. Zona correcta. Momento correcto.",
-  s04: "Buena Vista lleva años siendo zona de demanda real. La ubicación ya tiene mercado.",
+  s04: "Buena Vista es una zona con demanda sostenida y plusvalía documentada. La ubicación habla por sí misma.",
   s05: "Un producto que supera el estándar de mercado en su rango de precio.",
   s08: "El precio sube con cada fase. Quien entra primero compra más barato el mismo producto, obteniendo más por su inversión.",
   s09: "El estándar de un departamento chico en la zona ronda entre $4.5 y $6 millones. A un precio similar, los townhouses se prevén de colocación rápida — son una opción mejor y más grande.",

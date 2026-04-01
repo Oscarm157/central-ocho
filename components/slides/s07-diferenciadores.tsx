@@ -5,22 +5,22 @@ const items = [
   {
     icon: "inventory",
     title: "Escasez de casas",
-    description: "El corredor de Buena Vista está dominado por departamentos. Una casa nueva es una ventaja competitiva real en un mercado sin oferta comparable.",
+    description: "La zona de Buena Vista está dominada por departamentos. Una casa nueva representa una ventaja competitiva real en un mercado sin oferta comparable.",
   },
   {
     icon: "connect",
     title: "Acceso estratégico",
-    description: "A metros de la vía rápida. Conectividad inmediata con toda la ciudad: Zona Río, garita, centro, aeropuerto — todo a menos de 15 minutos.",
+    description: "A metros de la vía rápida. Conectividad inmediata con toda la ciudad: Zona Río, Garita, Centro, Aeropuerto — todo a menos de 15 minutos.",
   },
   {
     icon: "shield",
     title: "Privacidad garantizada",
-    description: "Solo 8 unidades. Sin pasillos, sin elevadores, sin vecinos desconocidos. La densidad baja no es un atributo secundario — es el producto.",
+    description: "Solo 8 unidades. Sin áreas comunes compartidas, sin alta densidad. Un formato residencial pensado para quienes valoran su espacio.",
   },
   {
     icon: "chart",
     title: "Zona en crecimiento",
-    description: "Buena Vista consolida su posición como alternativa sólida a Zona Dorada. Plusvalía comprobada, infraestructura madura y demanda sostenida.",
+    description: "Buena Vista se ha consolidado como alternativa sólida a Zona Dorada. Plusvalía comprobada, infraestructura madura y demanda sostenida.",
   },
 ];
 
