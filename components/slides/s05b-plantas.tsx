@@ -5,11 +5,11 @@ import { Slide } from "@/components/slide";
 
 const IMG_SRC = "/images/PLANTAS ARQUITECTONICAS TOWNHOUSES__.png";
 const ZOOM = 2;
-const LENS_SIZE = 240;
+const LENS_SIZE = 264;
 
 export function S05bPlantas() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [lupaActive, setLupaActive] = useState(false);
+  const [lupaActive, setLupaActive] = useState(true);
   const [lens, setLens] = useState<{ x: number; y: number } | null>(null);
 
   const handleMove = useCallback(
@@ -68,16 +68,16 @@ export function S05bPlantas() {
             />
           )}
 
-          {/* Toggle lupa */}
+          {/* Toggle lupa — arriba derecha, color contrastante */}
           <button
             onClick={() => {
               setLupaActive((v) => !v);
               if (lupaActive) setLens(null);
             }}
-            className={`absolute bottom-4 right-4 z-20 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2 transition-all duration-300 ${
+            className={`absolute top-3 right-3 z-20 rounded-lg px-3 py-2 flex items-center gap-2 transition-all duration-300 ${
               lupaActive
-                ? "bg-primary text-white shadow-[0_0_16px_rgba(139,105,20,0.3)]"
-                : "bg-foreground/50 text-white/80 hover:bg-foreground/70"
+                ? "bg-charcoal text-white shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
+                : "bg-white text-charcoal shadow-[0_2px_12px_rgba(0,0,0,0.12)] hover:bg-white/90"
             }`}
           >
             <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
