@@ -6,6 +6,7 @@ import { S02Concepto } from "@/components/slides/s02-concepto";
 import { S03Oportunidad } from "@/components/slides/s03-oportunidad";
 import { S04Ubicacion } from "@/components/slides/s04-ubicacion";
 import { S05Producto } from "@/components/slides/s05-producto";
+import { S05bPlantas } from "@/components/slides/s05b-plantas";
 import { S06Galeria } from "@/components/slides/s06-galeria";
 import { S07Diferenciadores } from "@/components/slides/s07-diferenciadores";
 import { S08Estrategia } from "@/components/slides/s08-estrategia";
@@ -20,6 +21,7 @@ export default function Home() {
       <S03Oportunidad />
       <S04Ubicacion />
       <S05Producto />
+      <S05bPlantas />
       <S06Galeria />
       <S07Diferenciadores />
       <S08Estrategia />
