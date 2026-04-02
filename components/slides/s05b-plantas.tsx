@@ -1,63 +1,84 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { Slide } from "@/components/slide";
-import { ImageLightbox } from "@/components/ui/image-lightbox";
 
-const plantaImage = {
-  src: "/images/PLANTAS ARQUITECTONICAS TOWNHOUSES__.png",
-  alt: "Plantas Arquitectónicas Townhouses",
-  label: "Plantas Arquitectónicas",
-};
+const ZOOM = 2.5;
+const LENS_SIZE = 180;
 
 export function S05bPlantas() {
-  const [showLightbox, setShowLightbox] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [lens, setLens] = useState<{ x: number; y: number; bgX: number; bgY: number } | null>(null);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  const handleMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const percX = (x / rect.width) * 100;
+    const percY = (y / rect.height) * 100;
+    setLens({ x, y, bgX: percX, bgY: percY });
+  }, []);
 
   return (
     <Slide centered={false}>
       <div className="stagger-in flex flex-col h-full">
         {/* Header compacto */}
-        <div className="mb-3 sm:mb-4 shrink-0">
-          <span className="font-mono text-sm text-foreground/20 block mb-2">05</span>
-          <div className="w-[60px] h-[2px] bg-primary mb-3" />
+        <div className="mb-2 sm:mb-3 shrink-0">
+          <span className="font-mono text-sm text-foreground/20 block mb-1">05</span>
+          <div className="w-[60px] h-[2px] bg-primary mb-2" />
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground">
             Plantas Arquitectónicas
           </h2>
         </div>
 
-        {/* Imagen — ocupa casi toda la pantalla */}
+        {/* Imagen — casi pantalla completa, sin box */}
         <div
-          className="zoom-reveal relative h-[70vh] rounded-xl overflow-hidden group cursor-zoom-in
-                     transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(139,105,20,0.12)]"
-          onClick={() => setShowLightbox(true)}
+          ref={containerRef}
+          className="zoom-reveal relative h-[78vh] overflow-hidden cursor-none"
+          onMouseMove={handleMove}
+          onMouseLeave={() => setLens(null)}
         >
           <Image
-            src={plantaImage.src}
-            alt={plantaImage.alt}
+            src="/images/PLANTAS ARQUITECTONICAS TOWNHOUSES__.png"
+            alt="Plantas Arquitectónicas Townhouses"
             fill
-            className="object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+            className="object-contain"
             sizes="100vw"
             quality={90}
             priority
+            onLoad={() => setImgLoaded(true)}
           />
 
-          {/* Indicador de zoom en hover */}
-          <div className="absolute bottom-0 right-0 m-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                          bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
-            <span className="material-symbols-outlined text-white" style={{ fontSize: 16 }}>zoom_in</span>
-            <span className="text-white text-xs font-medium">Ampliar</span>
-          </div>
+          {/* Lupa que sigue el cursor */}
+          {lens && imgLoaded && (
+            <div
+              className="pointer-events-none absolute rounded-full border-2 border-primary/60 shadow-[0_0_20px_rgba(139,105,20,0.25)]"
+              style={{
+                width: LENS_SIZE,
+                height: LENS_SIZE,
+                left: lens.x - LENS_SIZE / 2,
+                top: lens.y - LENS_SIZE / 2,
+                backgroundImage: `url("/images/PLANTAS ARQUITECTONICAS TOWNHOUSES__.png")`,
+                backgroundSize: `${ZOOM * 100}%`,
+                backgroundPosition: `${lens.bgX}% ${lens.bgY}%`,
+                backgroundRepeat: "no-repeat",
+                zIndex: 10,
+              }}
+            />
+          )}
+
+          {/* Hint */}
+          {!lens && (
+            <div className="absolute bottom-3 right-3 bg-foreground/60 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 opacity-60">
+              <span className="material-symbols-outlined text-white" style={{ fontSize: 16 }}>search</span>
+              <span className="text-white text-xs font-medium">Mueve el cursor para explorar</span>
+            </div>
+          )}
         </div>
       </div>
-
-      {showLightbox && (
-        <ImageLightbox
-          images={[plantaImage]}
-          initialIndex={0}
-          onClose={() => setShowLightbox(false)}
-        />
-      )}
     </Slide>
   );
 }
