@@ -151,9 +151,13 @@ body::after {
 /* CTA pulse */
 @keyframes pulse-cta { 0%, 100% { box-shadow: 0 0 0 0 rgba(139,105,20,0.4); } 50% { box-shadow: 0 0 0 10px rgba(139,105,20,0); } }
 
+/* Zoom reveal for architectural plans */
+.zoom-reveal { animation: zoomReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards; opacity: 0; transform: scale(1.06); }
+@keyframes zoomReveal { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .slide-enter, .stagger-in > *, .animate-number, .bar-grow, .progress-animate, .hero-fade-in, .hero-fade-in-delayed, .hero-fade-in-delayed-2, .hero-fade-in-delayed-3 {
+  .slide-enter, .stagger-in > *, .animate-number, .bar-grow, .progress-animate, .hero-fade-in, .hero-fade-in-delayed, .hero-fade-in-delayed-2, .hero-fade-in-delayed-3, .zoom-reveal {
     animation: none; opacity: 1; transform: none; width: var(--target-width, auto);
   }
 }
