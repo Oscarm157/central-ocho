@@ -26,9 +26,9 @@ export function S05bPlantas() {
           </h2>
         </div>
 
-        {/* Imagen — ocupa todo el espacio restante */}
+        {/* Imagen — ocupa casi toda la pantalla */}
         <div
-          className="zoom-reveal relative flex-1 min-h-0 rounded-xl overflow-hidden group cursor-zoom-in
+          className="zoom-reveal relative h-[70vh] rounded-xl overflow-hidden group cursor-zoom-in
                      transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(139,105,20,0.12)]"
           onClick={() => setShowLightbox(true)}
         >
